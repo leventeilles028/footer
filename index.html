@@ -36,6 +36,25 @@
             margin-bottom: 40px;
         }
         
+        .header {
+            background: #1a1a1a;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            color: #aaa;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        
         /* Footer stílusok */
         .kaptar-footer {
             background-color: #1a1a1a;
@@ -207,6 +226,29 @@
             color: #ff6b6b;
         }
         
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-icons a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: #333;
+            border-radius: 50%;
+            color: white;
+            text-align: center;
+            line-height: 40px;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            background: #ff6b6b;
+            transform: translateY(-3px);
+        }
+        
         @media (max-width: 768px) {
             .footer-grid {
                 grid-template-columns: 1fr;
@@ -217,6 +259,7 @@
 <body>
     <div class="container">
         <div class="preview-box">
+            
             <!-- KAPTÁR Footer Szekció -->
             <footer class="kaptar-footer">
                 <div class="footer-container">
@@ -233,18 +276,25 @@
                                 +36 30 684 3996<br>
                                 hello@kaptarbudapest.hu
                             </div>
+                            
+                            <div class="social-icons">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-youtube"></i></a>
+                            </div>
                         </div>
                         
                         <!-- 2. oszlop - Linkek 1 -->
                         <div>
                             <div class="footer-links-title">Szolgáltatásaink</div>
                             <ul class="footer-links">
-                                <li><a href="#">Alkalmi coworking</a></li>
-                                <li><a href="#">Coworking tagság</a></li>
-                                <li><a href="#">Közösségi tagság</a></li>
-                                <li><a href="#">Tárgyaló bérlés</a></li>
-                                <li><a href="#">Workshop helyszín</a></li>
-                                <li><a href="#">Székhelyszolgáltatás</a></li>
+                                <li><a href="#"><i class="fas fa-briefcase"></i> Alkalmi coworking</a></li>
+                                <li><a href="#"><i class="fas fa-users"></i> Coworking tagság</a></li>
+                                <li><a href="#"><i class="fas fa-handshake"></i> Közösségi tagság</a></li>
+                                <li><a href="#"><i class="fas fa-comments"></i> Tárgyaló bérlés</a></li>
+                                <li><a href="#"><i class="fas fa-chalkboard-teacher"></i> Workshop helyszín</a></li>
+                                <li><a href="#"><i class="fas fa-building"></i> Székhelyszolgáltatás</a></li>
                             </ul>
                         </div>
                         
@@ -252,20 +302,20 @@
                         <div>
                             <div class="footer-links-title">Közösségi élet</div>
                             <ul class="footer-links">
-                                <li><a href="#">Kaptár arcok</a></li>
-                                <li><a href="#">Blog</a></li>
-                                <li><a href="#">Események</a></li>
-                                <li><a href="#">Ajánlatok</a></li>
+                                <li><a href="#"><i class="fas fa-smile"></i> Kaptár arcok</a></li>
+                                <li><a href="#"><i class="fas fa-blog"></i> Blog</a></li>
+                                <li><a href="#"><i class="fas fa-calendar-alt"></i> Események</a></li>
+                                <li><a href="#"><i class="fas fa-gift"></i> Ajánlatok</a></li>
                             </ul>
                             
                             <div class="footer-links-title" style="margin-top: 30px;">Hasznos</div>
                             <ul class="footer-links">
-                                <li><a href="#">Tárgyalófoglalás</a></li>
-                                <li><a href="#">Coworking árak</a></li>
-                                <li><a href="#">Képek & Videók</a></li>
-                                <li><a href="#">Rólunk</a></li>
-                                <li><a href="#">Gyakori kérdések</a></li>
-                                <li><a href="#">Nézz körbe</a></li>
+                                <li><a href="#"><i class="fas fa-calendar-check"></i> Tárgyalófoglalás</a></li>
+                                <li><a href="#"><i class="fas fa-tags"></i> Coworking árak</a></li>
+                                <li><a href="#"><i class="fas fa-camera"></i> Képek & Videók</a></li>
+                                <li><a href="#"><i class="fas fa-info-circle"></i> Rólunk</a></li>
+                                <li><a href="#"><i class="fas fa-question-circle"></i> Gyakori kérdések</a></li>
+                                <li><a href="#"><i class="fas fa-search"></i> Nézz körbe</a></li>
                             </ul>
                         </div>
                         
@@ -278,13 +328,13 @@
                                 izgalmas tartalmak Kaptárosan.
                             </div>
                             
-                            <form>
+                            <form id="newsletterForm">
                                 <input type="text" class="footer-input" placeholder="Név*" required>
                                 <input type="email" class="footer-input" placeholder="E-mail cím*" required>
                                 
                                 <div class="checkbox-container">
                                     <input type="checkbox" id="terms" required>
-                                    <label for="terms">Elfogadom a feltételeket*<br>
+                                    <label for="terms">Elfogadom a feltételeket*</label>
                                 </div>
                                 
                                 <button type="submit" class="subscribe-btn">FELIRATKOZOM</button>
@@ -294,8 +344,12 @@
                     
                     <div class="footer-bottom">
                         <div class="footer-bottom-links">
-                            <a href="#">Általános szerződési feltételek</a>
-                            <a href="#">Adatvédelem</a>
+                            <a href="#"><i class="fas fa-file-contract"></i> Általános szerződési feltételek</a>
+                            <a href="#"><i class="fas fa-shield-alt"></i> Adatvédelem</a>
+                            <a href="#"><i class="fas fa-cookie-bite"></i> Cookie-beállítások</a>
+                        </div>
+                        <div class="copyright">
+                            &copy; 2023 KAPTÁR Irodák Kft. - Minden jog fenntartva
                         </div>
                     </div>
                 </div>
@@ -327,6 +381,14 @@
                 this.style.color = '#ccc';
                 this.style.transform = 'translateX(0)';
             });
+        });
+        
+        // Hírlevél form validáció
+        document.getElementById('newsletterForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = this.querySelector('input[type="text"]').value;
+            alert(`Köszönjük, ${name}! Sikeresen feliratkozott hírlevelünkre.`);
+            this.reset();
         });
     </script>
 </body>
